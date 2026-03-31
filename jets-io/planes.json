@@ -1,0 +1,341 @@
+{
+    "upgradeFrom (str);":1,
+    "acceleration (num) ('units per second per second');":1,
+    "topSpeed (num) ('units per second');":1,
+    "handling (num) ('degrees per second');":1,
+    "braking (num) ('units per second per second');":1,
+    "health (num) ('hp');":1,
+    "attack (array) ('default attack type names (e.g. bullets or missiles)');":1,
+    "attack[index].damage (num) ('damage for attack');":1,
+    
+
+    "Rookie": {
+        "acceleration": 0.6,
+        "topSpeed": 4,
+        "handling": 24,
+        "braking": 0.4,
+        "health": 100,
+        "attack": {
+            "bullets": {
+                "damage": 5,
+                "speed": 7,
+                "range": 17,
+                "fireRate": 6,
+                "reloadRate": 1.5,
+                "ammoPerReload": 20,
+                "startingAmmo": 1500
+            }, 
+            "missiles": {
+                "damage": 70,
+                "speed": 5,
+                "explosionRadius": 3,
+                "range": 50,
+                "reloadRate": 2.5,
+                "ammoPerReload": 1,
+                "startingAmmo": 5
+            }
+        }
+    },
+
+    "Bomber": {
+        "upgradeFrom": "Rookie",
+        "acceleration": 0.6,
+        "topSpeed": 4.2,
+        "handling": 22,
+        "braking": 0.5,
+        "health": 110,
+        "attack": {
+            "missiles": {
+                "damage": 90,
+                "speed": 7,
+                "explosionRadius": 4,
+                "range": 85,
+                "reloadRate": 1.5,
+                "ammoPerReload": 1,
+                "startingAmmo": 10
+            }
+        }
+    },
+
+    "Swooper": {
+        "upgradeFrom": "Bomber",
+        "acceleration": 0.7,
+        "topSpeed": 4.5,
+        "handling": 23,
+        "braking": 0.6,
+        "health": 110,
+        "attack": {
+            "missiles": {
+                "damage": 90,
+                "speed": 8,
+                "explosionRadius": 4,
+                "range": 100,
+                "reloadRate": 1.5,
+                "ammoPerReload": 1,
+                "startingAmmo": 10
+            }
+        }
+    },
+
+    "Manueverer": {
+        "upgradeFrom": "Swooper",
+        "acceleration": 0.85,
+        "topSpeed": 4.8,
+        "handling": 27,
+        "braking": 0.7,
+        "health": 115,
+        "attack": {
+            "missiles": {
+                "damage": 90,
+                "speed": 8,
+                "explosionRadius": 4,
+                "range": 100,
+                "reloadRate": 1.5,
+                "ammoPerReload": 1,
+                "startingAmmo": 10
+            }
+        }
+    },
+
+    "Radiobomber": {
+        "upgradeFrom": "Swooper",
+        "acceleration": 0.8,
+        "topSpeed": 4.7,
+        "handling": 24,
+        "braking": 0.6,
+        "health": 115,
+        "attack": {
+            "bombs": {
+                "damage": 40,
+                "speed": 5,
+                "explosionRadius": 6,
+                "range": 6,
+                "reloadRate": 0.75,
+                "ammoPerReload": 1,
+                "effects": ["Radioactivity"],
+                "startingAmmo": 50
+            }
+        }
+    },
+
+    "Pooper": {
+        "upgradeFrom": "Swooper",
+        "acceleration": 0.8,
+        "topSpeed": 4.7,
+        "handling": 24,
+        "braking": 0.6,
+        "health": 115,
+        "attack": 
+            {
+                "bombs": {
+                    "damage": 40,
+                    "speed": 5,
+                    "explosionRadius": 7,
+                    "range": 6,
+                    "reloadRate": 0.75,
+                    "ammoPerReload": 1,
+                    "effects": ["Slowness", "Fog", "Turn Resistance"],
+                    "chanceOccurrence": {
+                        "chance": 0.0001,
+                        "add": {
+                            "effects": ["Radioactivity"],
+                            "damage": 35
+                        }
+                    },
+                    "startingAmmo": 50
+                }
+            }
+    },
+
+    "Droplet": {
+        "upgradeFrom": "Bomber",
+        "acceleration": 0.7,
+        "topSpeed": 4.5,
+        "handling": 23,
+        "braking": 0.6,
+        "health": 110,
+        "attack": {
+            "drones": {
+                "acceleration": 1,
+                "topSpeed": 4.7,
+                "handling": 22,
+                "braking": 0.5,
+                "health": 50,
+                "attack": {
+                    "bullets": {
+                        "damage": 5,
+                        "speed": 4,
+                        "range": 10,
+                        "reloadRate": 1,
+                        "fireRate": 4,
+                        "ammoPerReload": 20,
+                        "startingAmmo": 1500
+                    },
+                    "missiles": {
+                        "damage": 45,
+                        "speed": 5,
+                        "range": 30,
+                        "reloadRate": 1.5,
+                        "ammoPerReload": 1,
+                        "startingAmmo": 5
+
+                    }
+                },
+                "size": 0.3,
+                "max": 5
+            },
+            "bullets": {
+                "damage": 5,
+                "speed": 4,
+                "range": 17,
+                "reloadRate": 1,
+                "fireRate": 4,
+                "ammoPerReload": 20,
+                "startingAmmo": 1500
+            }
+        }
+    },
+
+    "Mothership": {
+        "upgradeFrom": "Droplet",
+        "acceleration": 0.8,
+        "topSpeed": 4.7,
+        "handling": 26,
+        "braking": 0.7,
+        "health": 115,
+        "attack": {
+            "drones": {
+                "acceleration": 1,
+                "topSpeed": 4.7,
+                "handling": 22,
+                "braking": 0.5,
+                "health": 50,
+                "attack": {
+                    "bullets": {
+                        "damage": 5,
+                        "speed": 4,
+                        "range": 10,
+                        "reloadRate": 1,
+                        "fireRate": 4,
+                        "ammoPerReload": 20,
+                        "startingAmmo": 1500
+                    },
+                    "missiles": {
+                        "damage": 45,
+                        "speed": 5,
+                        "range": 30,
+                        "reloadRate": 1.5,
+                        "ammoPerReload": 1,
+                        "startingAmmo": 5
+
+                    }
+                },
+                "size": 0.3,
+                "max": 9
+            },
+            "bullets": {
+                "damage": 6,
+                "speed": 4,
+                "range": 17,
+                "reloadRate": 1,
+                "fireRate": 4,
+                "ammoPerReload": 20,
+                "startingAmmo": 1500
+            }
+        }
+    },
+
+    "Hive": {
+        "upgradeFrom": "Droplet",
+        "acceleration": 0.8,
+        "topSpeed": 4.7,
+        "handling": 26,
+        "braking": 0.7,
+        "health": 115,
+        "attack": {
+            "drones": {
+                "acceleration": 0.9,
+                "topSpeed": 4.5,
+                "handling": 23,
+                "braking": 0.4,
+                "health": 70,
+                "attack": {
+                    "bullets": {
+                        "damage": 6,
+                        "speed": 4,
+                        "range": 14,
+                        "reloadRate": 1,
+                        "fireRate": 4,
+                        "ammoPerReload": 20,
+                        "startingAmmo": 1500
+                    },
+                    "missiles": {
+                        "damage": 55,
+                        "speed": 5,
+                        "range": 50,
+                        "reloadRate": 1.5,
+                        "ammoPerReload": 1,
+                        "startingAmmo": 5
+                    }
+                }
+            }
+        }
+    },
+
+    "Vector": {
+        "upgradeFrom": "Droplet",
+        "acceleration": 0.8,
+        "topSpeed" : 4.7,
+        "handling": 26,
+        "braking": 0.7,
+        "health": 115,
+        "attack": {
+            "drones": {
+                "acceleration": 0.9,
+                "topSpeed": 4.5,
+                "handling": 23,
+                "braking": 0.4,
+                "health": 70,
+                "attack": {
+                    "drones": {
+                        "acceleration": 1,
+                        "topSpeed": 4.7,
+                        "handling": 22,
+                        "braking": 0.5,
+                        "health": 50,
+                        "attack": {
+                            "bullets": {
+                                "damage": 5,
+                                "speed": 4,
+                                "range": 10,
+                                "reloadRate": 1,
+                                "fireRate": 4,
+                                "ammoPerReload": 20,
+                                "startingAmmo": 1500
+                            },
+                            "missiles": {
+                                "damage": 45,
+                                "speed": 5,
+                                "range": 30,
+                                "reloadRate": 1.5,
+                                "ammoPerReload": 1,
+                                "startingAmmo": 5
+                            }
+                        },
+                        "size": 0.3,
+                        "max": 5
+                    },
+                    "bullets": {
+                        "damage": 5,
+                        "speed": 4,
+                        "range": 17,
+                        "reloadRate": 1,
+                        "fireRate": 4,
+                        "ammoPerReload": 20,
+                        "startingAmmo": 1500
+                    }
+                }
+            }
+        }
+    }
+}

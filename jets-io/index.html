@@ -1,0 +1,126 @@
+<!-- 
+ 
+
+
+
+Version 0.1
+The only thing is the home screen...
+
+Created By Vedant Kadalli
+Please donate or buy something
+
+Framework:
+HTML for web presentation
+JavaScript  for interactivity
+
+Fonts:
+Honk (Google Fonts)
+Lexend (Google Fonts)
+
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="untouchable-home-screen-rule.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+        <title>Jets.IO</title>
+        <style>
+
+            #title {
+
+                position: absolute;
+                width: 100vw; 
+                display: flex;
+                justify-content: center;
+                top: 0%;
+                left: 0;
+                font-size: 100pt;
+                font-family: 'Honk';
+                font-palette: --titlePalette;
+
+            }
+
+            body {
+
+                background-color: rgb(57, 57, 57);
+
+            }
+
+            #player-name-form {
+
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 60%;
+                height: 60px;
+                left: 0;
+                width: 100%;
+                gap: 20px;
+
+            }
+
+            #play-button {
+
+                display: flex;
+                font-family: 'Honk';
+                font-palette: --titlePalette;
+                background-color: white;
+                font-size: 40pt;
+                border-style: solid;
+                border-width: 4px;
+                border-radius: 4px;
+                height: 70px;
+                padding-left: 20px;
+                padding-right: 20px;
+                align-items: flex-end;
+
+            }
+
+            #player-name-input {
+
+                font-size: 20pt;
+                font-family: 'Lexend';
+                border-color: black;
+                border-width: 4px;
+                border-style: solid;
+                border-radius: 4px;
+                height: 60px;
+                padding-left: 15px;
+
+            }
+
+            #play-button:hover {
+
+                background-color: lightgray;
+
+            }
+
+            #play-button:active {
+
+                background-color: gray;
+
+            }
+
+        </style>
+        <style src="untouchable-home-screen-rule.css"></style>
+    </head>
+    <body>
+        <div id="home-screen-container">
+            <div id="title"><h1>jets.io</h1></div>
+            <form id="player-name-form">
+                <input id="player-name-input" type="text" placeholder="Enter player name" value="Player">
+                <button id="play-button" type="submit">PLAY!</button>
+            </form>
+        </div>
+    </body>
+    <script src="form-submit.js"></script>
+</html>
