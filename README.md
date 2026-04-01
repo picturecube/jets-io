@@ -1,2 +1,2 @@
 # jets-io
-a game
+(Soon to be) an action-packed 2D battle game with jets
