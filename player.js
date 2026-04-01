@@ -1,4 +1,4 @@
-class Player extends Phaser.GameObjects.Image {
+class Player extends Phaser.Physics.Arcade.Image {
 
     constructor(scene, x, y, key) {
 
@@ -13,6 +13,8 @@ class Player extends Phaser.GameObjects.Image {
         this.SKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.DKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.cursors = scene.input.keyboard.createCursorKeys();
+        this.setCollideWorldBounds(true);
+        this.setBounce(0);
         
 
     };

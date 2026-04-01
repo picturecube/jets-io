@@ -16,7 +16,10 @@
                     mode: Phaser.Scale.ENVELOP,
                     autoCenter: Phaser.Scale.CENTER_BOTH
                 },
-                scene: GameWindow
+                scene: GameWindow,
+                physics: {
+                    default: 'arcade'
+                }
             };
             
             const game = new Phaser.Game(config);
