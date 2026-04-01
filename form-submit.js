@@ -1,6 +1,6 @@
 usernameForm = $('#player-name-form');
 
-usernameForm.addEventListener('submit', function(event) {
+usernameForm.on('submit', function() {
     event.preventDefault();
     console.log("Form submitted");
     const playerName = $('#player-name-input').val();
