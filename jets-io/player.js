@@ -30,23 +30,15 @@ class Player extends Phaser.GameObjects.Image {
         this.setY(this.y + this.yVel);
         if (this.cursors.up.isDown || this.WKey.isDown) {
             this.yVel += -0.1;
-            console.log("up");
-            console.log(this.yVel);
         };
         if (this.cursors.down.isDown || this.SKey.isDown) {
             this.yVel += 0.1;
-            console.log("down");
-            console.log(this.yVel);
         };
         if (this.cursors.left.isDown || this.AKey.isDown) {
             this.xVel += -0.1;
-            console.log("left");
-            console.log(this.xVel);
         };
         if (this.cursors.right.isDown || this.DKey.isDown) {
             this.xVel += 0.1;
-            console.log("right");
-            console.log(this.xVel);
         };
 
     };
