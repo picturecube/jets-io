@@ -19,6 +19,7 @@ class GameWindow extends Phaser.Scene
 
         ground = this.add.image(400, 300, 'ground');
         player = new Player(this, 400, 300, 'player');
+        this.cameras.main.setBackgroundColor('#2e2e2e')
 
         player.initialize();
 
