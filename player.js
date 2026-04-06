@@ -20,7 +20,7 @@ class Player extends Phaser.Physics.Arcade.Image {
 
     initialize() {
         
-        this.setVelocityY(-5);
+        this.setVelocity(0, -5);
         
         
     };
@@ -30,8 +30,6 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.changeXVel = 0
         this.changeYVel = 0
 
-        this.setX(this.x + this.xVel);
-        this.setY(this.y + this.yVel);
         if (this.cursors.up.isDown || this.WKey.isDown) {
             this.changeYVel = -0.01;
         };
