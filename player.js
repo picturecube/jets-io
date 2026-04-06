@@ -15,7 +15,6 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.setBounce(0);
         this.scene = scene;
         
-
     };
 
     initialize() {
