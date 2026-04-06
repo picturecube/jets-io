@@ -4,6 +4,7 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         super(scene, x, y, key);
         scene.add.existing(this);
+        scene.physics.add.existing(this);
         this.setScale(0.1);
         this.setInteractive();
         this.WKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
