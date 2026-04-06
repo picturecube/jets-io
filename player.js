@@ -20,7 +20,7 @@ class Player extends Phaser.Physics.Arcade.Image {
 
     initialize() {
         
-        this.setVelocity(0, -5);
+        this.setVelocity(0, 0);
         
         
     };
