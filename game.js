@@ -16,21 +16,21 @@ class GameWindow extends Phaser.Scene
 
     create () {
 
-        ground = this.add.image(400, 300, 'ground');
-        player = new Player(this, 400, 300, 'player');
-        bounds = this.physics.add.staticImage(400, 300, 'bounds');
-        bounds.setScale(10);
-        collider = this.physics.add.collider(player, bounds);
+        this.ground = this.add.image(400, 300, 'ground');
+        this.player = new Player(this, 400, 300, 'player');
+        this.bounds = this.physics.add.staticImage(400, 300, 'bounds');
+        this.bounds.setScale(10);
+        this.worldBoundsCollider = this.physics.add.collider(this.player, this.bounds);
 
         this.cameras.main.setBackgroundColor('#2e2e2e');
 
-        player.initialize();
+        this.player.initialize();
 
     };
 
     update () {
 
-        player.update();
+        this.player.update();
 
     };
 };
