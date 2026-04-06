@@ -33,10 +33,10 @@ class Player extends Phaser.Physics.Arcade.Image {
     update() {
 
         if (this.cursors.up.isDown || this.WKey.isDown) {
-            this.setVelocityForward(this.velocityForward - 5);
+            this.setVelocityForward(this.velocityForward - 1);
         };
         if (this.cursors.down.isDown || this.SKey.isDown) {
-            this.setVelocityForward(this.velocityForward);
+            this.setVelocityForward(this.velocityForward + 1);
         };
         if (this.cursors.left.isDown || this.AKey.isDown) {
             this.setAngle(this.angle - 5);
@@ -44,6 +44,9 @@ class Player extends Phaser.Physics.Arcade.Image {
         if (this.cursors.right.isDown || this.DKey.isDown) {
             this.setAngle(this.angle + 5);
         };
+
+        this.setVelocity(0, 0);
+        this.setVelocityForward(this.velocityForward);
 
     };
 
