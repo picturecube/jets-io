@@ -20,6 +20,7 @@ class GameWindow extends Phaser.Scene
         player = new Player(this, 400, 300, 'player');
         bounds = this.physics.add.staticImage(400, 300, 'bounds');
         bounds.setScale(10);
+        collider = this.physics.add.collider(player, bounds);
 
         this.cameras.main.setBackgroundColor('#2e2e2e');
 
