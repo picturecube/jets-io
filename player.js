@@ -14,6 +14,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.cursors = scene.input.keyboard.createCursorKeys();
         this.setCollideWorldBounds(true);
         this.setBounce(0);
+        this.scene = scene;
         
 
     };
@@ -47,6 +48,7 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         this.setVelocity(0, 0);
         this.setVelocityForward(this.velocityForward);
+        this.scene.cameras.main.setScroll(this.x - 400, this.y - 300);
 
     };
 
