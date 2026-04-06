@@ -22,7 +22,6 @@ class Player extends Phaser.Physics.Arcade.Image {
         
         this.setVelocity(0, 0);
         
-        
     };
 
     update() {
@@ -31,16 +30,16 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.changeYVel = 0
 
         if (this.cursors.up.isDown || this.WKey.isDown) {
-            this.changeYVel = -0.01;
+            this.changeYVel = -1;
         };
         if (this.cursors.down.isDown || this.SKey.isDown) {
-            this.changeYVel = 0.01;
+            this.changeYVel = 1;
         };
         if (this.cursors.left.isDown || this.AKey.isDown) {
-            this.changeXVel = -0.01;
+            this.changeXVel = -1;
         };
         if (this.cursors.right.isDown || this.DKey.isDown) {
-            this.changeXVel = 0.01;
+            this.changeXVel = 1;
         };
 
         this.setVelocity(this.changeXVel, this.changeYVel);
