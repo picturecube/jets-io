@@ -39,8 +39,6 @@ class Player extends Phaser.Physics.Arcade.Image {
             this.setVelocityX(this.body.velocity.x + 5);
         };
 
-        this.setVelocity(this.changeXVel, this.changeYVel);
-
     };
 
 }
