@@ -5,8 +5,6 @@ class Player extends Phaser.Physics.Arcade.Image {
         super(scene, x, y, key);
         scene.add.existing(this);
         this.setScale(0.1);
-        this.yVel = 0;
-        this.xVel = 0;
         this.setInteractive();
         this.WKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.AKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -21,7 +19,7 @@ class Player extends Phaser.Physics.Arcade.Image {
 
     initialize() {
         
-        this.yVel = 5;
+        this.setVelocityY(-5);
         
         
     };
@@ -31,16 +29,16 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.setX(this.x + this.xVel);
         this.setY(this.y + this.yVel);
         if (this.cursors.up.isDown || this.WKey.isDown) {
-            this.yVel += -0.1;
+            this.setVelocityY(velocityY - 0.01);
         };
         if (this.cursors.down.isDown || this.SKey.isDown) {
-            this.yVel += 0.1;
+            this.setVelocityY(velocityY + 0.01);
         };
         if (this.cursors.left.isDown || this.AKey.isDown) {
-            this.xVel += -0.1;
+            this.setVelocityX(velocityX - 0.01);
         };
         if (this.cursors.right.isDown || this.DKey.isDown) {
-            this.xVel += 0.1;
+            this.setVelocityX(velocityX + 0.01);
         };
 
     };
