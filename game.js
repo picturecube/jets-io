@@ -15,19 +15,19 @@ class GameWindow extends Phaser.Scene
 
         this.load.image('ground', 'assets/ground.png');
         this.load.image('player', 'assets/player.png');
-        this.load.image('bounds', 'assets/bounds.png');
+        this.load.image('bounds', 'assets/bounds.png'); //preload assets
 
     };
 
     create () {
 
-        ground = this.add.image(400, 300, 'ground');
+        ground = this.add.image(400, 300, 'ground'); //adds a ground first
 
-        player = new Player(this, 400, 300, 'player');
+        player = new Player(this, 400, 300, 'player'); //adds player
 
-        this.physics.world.setBounds(0, 0, 5000, 5000);
+        this.physics.world.setBounds(0, 0, 5000, 5000, true, true, true, true); //sets world bounds
 
-        bounds = this.physics.add.staticGroup();
+        /*bounds = this.physics.add.staticGroup();
 
         leftBound = bounds.create(-20, 2500, 'bounds');
         rightBound = bounds.create(5020, 2500, 'bounds');
@@ -37,17 +37,17 @@ class GameWindow extends Phaser.Scene
         topBound.setAngle(90).refreshBody();
         bottomBound.setAngle(90).refreshBody();
 
-        this.physics.add.collider(player, bounds);
+        this.physics.add.collider(player, bounds);*/ //experimental bounds created manually but i am trying to use setBounds() instead
 
-        this.cameras.main.setBackgroundColor('#2e2e2e');
+        this.cameras.main.setBackgroundColor('#2e2e2e'); //sets background color to a dark gray
 
-        player.initialize();
+        player.initialize(); //calls the player's initialize function
 
     };
 
     update () {
 
-        player.update();
+        player.update(); //calls the player's update function
 
     };
 };
