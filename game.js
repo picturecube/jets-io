@@ -1,5 +1,10 @@
 var ground;
 var player;
+var bounds;
+var leftBound;
+var rightBound;
+var topBound;
+var bottomBound;
 
 class GameWindow extends Phaser.Scene
 {
@@ -18,7 +23,7 @@ class GameWindow extends Phaser.Scene
 
         ground = this.add.image(400, 300, 'ground');
 
-        this.player = new Player(this, 400, 300, 'player');
+        player = new Player(this, 400, 300, 'player');
 
         this.physics.world.setBounds(0, 0, 5000, 5000);
 
@@ -36,13 +41,13 @@ class GameWindow extends Phaser.Scene
 
         this.cameras.main.setBackgroundColor('#2e2e2e');
 
-        this.player.initialize();
+        player.initialize();
 
     };
 
     update () {
 
-        this.player.update();
+        player.update();
 
     };
 };
