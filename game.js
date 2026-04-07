@@ -22,9 +22,9 @@ class GameWindow extends Phaser.Scene
 
         this.bounds = this.physics.add.staticGroup();
 
-        this.bounds.create(-20, 2500, 'bounds');
+        this.bounds.create(-5020, 2500, 'bounds');
         this.bounds.create(5020, 2500, 'bounds');
-        this.bounds.create(2500, -20, 'bounds');
+        this.bounds.create(2500, -5020, 'bounds');
         this.bounds.create(2500, 5020, 'bounds');
 
         this.physics.add.collider(this.player, this.bounds);
