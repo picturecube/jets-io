@@ -25,7 +25,7 @@ class GameWindow extends Phaser.Scene
 
         player = new Player(this, 400, 300, 'player'); //adds player
 
-        this.physics.world.setBounds(0, 0, 5000, 5000, true, true, true, true); //sets world bounds
+        this.physics.world.setBounds(-2100, -2200, 5000, 5000, true, true, true, true); //sets world bounds
 
         /*bounds = this.physics.add.staticGroup();
 
