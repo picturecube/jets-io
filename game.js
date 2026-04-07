@@ -20,6 +20,8 @@ class GameWindow extends Phaser.Scene
 
         this.player = new Player(this, 400, 300, 'player');
 
+        this.physics.world.setBounds(0, 0, 5000, 5000);
+
         bounds = this.physics.add.staticGroup();
 
         leftBound = bounds.create(-20, 2500, 'bounds');
