@@ -37,7 +37,7 @@ class GameWindow extends Phaser.Scene
         topBound.setAngle(90).refreshBody();
         bottomBound.setAngle(90).refreshBody();
 
-        this.physics.add.collider(this.player, bounds);
+        this.physics.add.collider(player, bounds);
 
         this.cameras.main.setBackgroundColor('#2e2e2e');
 
