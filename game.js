@@ -15,6 +15,7 @@ class GameWindow extends Phaser.Scene
 
         this.load.image('ground', 'assets/ground.png'); //preload assets
         this.load.image('player', 'assets/player.png');
+        this.load.image('bullet', 'assets/bullet.png');
 
     };
 

@@ -22,6 +22,8 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.setBounce(0); //remove bouncing on world bounds
 
         this.scene = scene; //stores the scene in a variable for later use
+
+        this.bulletLoadTime = 0; //stores the remaining time to load next bullet in a variable for later use
         
     };
 
@@ -70,5 +72,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.scene.cameras.main.setAngle(90 - this.angle); //rotates the camera to match the player's rotation
 
     };
+
+
 
 }
