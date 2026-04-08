@@ -67,6 +67,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.setVelocityForward(this.velocityForward);
 
         this.scene.cameras.main.setScroll(this.x - 400, this.y - 300); //moves the camera to follow the player
+        this.scene.cameras.main.setAngle(90 - this.angle); //rotates the camera to match the player's rotation
 
     };
 
