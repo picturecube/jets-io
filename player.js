@@ -54,14 +54,12 @@ class Player extends Phaser.Physics.Arcade.Image {
         if (this.cursors.left.isDown || this.AKey.isDown) {
 
             this.setAngle(this.angle - 5);
-            this.scene.cameras.main.rotation = Phaser.Math.DegToRad(this.angle); //rotates the camera to match the player's rotation
 
         };
 
         if (this.cursors.right.isDown || this.DKey.isDown) {
 
             this.setAngle(this.angle + 5);
-            this.scene.cameras.main.rotation = Phaser.Math.DegToRad(this.angle); //rotates the camera to match the player's rotation
 
         };
 
@@ -69,6 +67,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.setVelocityForward(this.velocityForward);
 
         this.scene.cameras.main.setScroll(this.x - 400, this.y - 300); //moves the camera to follow the player
+        this.scene.cameras.main.setAngle(this.angle); //rotates the camera to match the player's rotation
 
     };
 
