@@ -53,13 +53,13 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         if (this.cursors.left.isDown || this.AKey.isDown) {
 
-            this.setAngle(this.angle - 5);
+            this.setAngle(this.angle + 5);
 
         };
 
         if (this.cursors.right.isDown || this.DKey.isDown) {
 
-            this.setAngle(this.angle + 5);
+            this.setAngle(this.angle - 5);
 
         };
 
