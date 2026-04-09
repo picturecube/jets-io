@@ -2,6 +2,7 @@ var ground;
 var player;
 var bullet;
 var pointer;
+var bullets;
 
 class GameWindow extends Phaser.Scene
 {
@@ -42,7 +43,7 @@ class GameWindow extends Phaser.Scene
         if (pointer.isDown) { // if the pointer is down, fire the bullet
 
             bullets[-1].fire(pointer.worldX, pointer.worldY, player.x, player.y); // fires the last bullet in the array towards the pointer's world coordinates
-            
+
             bullets.filter(bullet => bullet.active); // filters out inactive bullets from the array
             bullets.push(new Bullet(this, player)); // adds a new bullet to the array
 
