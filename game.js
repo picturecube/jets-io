@@ -34,20 +34,22 @@ class GameWindow extends Phaser.Scene
 
         player.initialize(); // calls the player's initialize function
 
-    };
-
-    update () {
-
-        player.update(); // calls the player's update function
-
-        if (pointer.isDown) { // if the pointer is down, fire the bullet
+        this.input.on('pointerdown', function(pointer) { // if the pointer is down, fire the bullet
 
             bullets[-1].fire(pointer.worldX, pointer.worldY, player.x, player.y); // fires the last bullet in the array towards the pointer's world coordinates
 
             bullets.filter(bullet => bullet.active); // filters out inactive bullets from the array
             bullets.push(new Bullet(this, player)); // adds a new bullet to the array
 
-        };
+        }, this);
+
+    };
+
+    update () {
+
+        player.update(); // calls the player's update function
+
+        
 
     };
 
