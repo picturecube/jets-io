@@ -1,4 +1,4 @@
-class Bullet extends Phaser.Physics.Arcade.Group {
+class Bullet extends Phaser.Physics.Arcade.Image {
     constructor(scene, player) {
 
         super(scene, player.x, player.y, 'bullet');
