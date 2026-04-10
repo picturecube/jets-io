@@ -6,6 +6,8 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
+        this.setScale(1);
+
         this.setVisible(false);
 
         this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
