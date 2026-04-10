@@ -47,7 +47,7 @@ class GameWindow extends Phaser.Scene
         if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
     
                 try {
-                    bullets.at(-1).fire(this.input.activePointer.x, this.input.activePointer.y); // fires the last bullet in the array towards the pointer's world coordinates
+                    bullets.at(-1).fire(this.input.activePointer.worldX, this.input.activePointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
                     console.log(bullets); // logs the bullets array to the console (debug)
         
                     bullets.push(new Bullet(this, player)); // adds a new bullet to the array
