@@ -24,6 +24,7 @@ class GameWindow extends Phaser.Scene
         player = new Player(this, 400, 300, 'player'); // adds player
 
         bullets = [new Bullet(this, player)]; // adds a bullet
+        console.log(bullets[0].scene); // logs the scene of the first bullet to the console (debug)
 
         this.physics.world.setBounds(-2100, -2200, 5000, 5000, true, true, true, true); // sets world bounds
 
