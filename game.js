@@ -48,9 +48,8 @@ class GameWindow extends Phaser.Scene
     update () {
 
         player.update(); // calls the player's update function
-
+        bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
         
-
     };
 
 };
