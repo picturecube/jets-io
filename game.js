@@ -40,7 +40,7 @@ class GameWindow extends Phaser.Scene
 
         }, this);
         
-        bullets.filter(bullet => bullet.scene === undefined); // filters out inactive bullets from the array
+        bullets = bullets.filter(bullet => bullet.scene === undefined); // filters out inactive bullets from the array
         
 
     };
