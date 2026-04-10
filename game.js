@@ -36,10 +36,12 @@ class GameWindow extends Phaser.Scene
             bullets.at(-1).fire(pointer.worldX, pointer.worldY, player.x, player.y); // fires the last bullet in the array towards the pointer's world coordinates
             console.log(bullets); // logs the bullets array to the console (debug)
 
-            bullets.filter(bullet => bullet.active); // filters out inactive bullets from the array
-            bullets.push(new Bullet(this, player)); // adds a new bullet to the array
+            
 
         }, this);
+        
+        bullets.filter(bullet => bullet.active); // filters out inactive bullets from the array
+        bullets.push(new Bullet(this, player)); // adds a new bullet to the array
 
     };
 
