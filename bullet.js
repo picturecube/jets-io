@@ -18,7 +18,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         this.setVelocityForward(150); // sets the velocity to 150 pixels per second in the direction the player is facing
 
-        if (sqrt((playerX - x) ** 2 + (playerY - y) ** 2) < 500) {
+        if (sqrt((playerX - x) ** 2 + (playerY - y) ** 2) > 500) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
 
             this.destroy();
 
