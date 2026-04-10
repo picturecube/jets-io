@@ -79,7 +79,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             
             this.loadingTime += this.scene.game.loop.delta; // increments the loading time by the time since the last frame
 
-            if (this.loadingTime >= 200) { // if the loading time is greater than or equal to 200 milliseconds, set the status to "ready" and reset the loading time   
+            if (this.loadingTime >= 50) { // if the loading time is greater than or equal to 200 milliseconds, set the status to "ready" and reset the loading time   
 
                 this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
 
