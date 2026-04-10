@@ -10,6 +10,8 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         this.setVisible(false);
 
+        this.scene = scene; // stores the scene in a variable for later use
+
         this.source = player;
 
         this.status = 'loading'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
@@ -20,7 +22,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
     fire(x, y) {
 
-        if (this.status = 'ready') {
+        if (this.status === 'ready') {
 
             this.setVisible(true);
     
@@ -71,9 +73,9 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         if (this.status === 'loading') { // if the status of the bullet is "loading", increment the loading time and set the status to "ready" after 200 milliseconds
             
-            this.loadingTime += 1; // increments the loading time by the time since the last frame
+            this.loadingTime += this.scene.game.loop.delta; // increments the loading time by the time since the last frame
 
-            if (this.loadingTime >= 20) { // if the loading time is greater than or equal to 20 milliseconds, set the status to "ready" and reset the loading time   
+            if (this.loadingTime >= 200) { // if the loading time is greater than or equal to 200 milliseconds, set the status to "ready" and reset the loading time   
 
                 this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
 
