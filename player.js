@@ -37,7 +37,7 @@ class Player extends Phaser.Physics.Arcade.Image {
     setVelocityForward(vel) {
         this.setVelocity(vel * Math.cos(this.rotation), vel * Math.sin(this.rotation)); //sets the velocity to the forward velocity in the direction the player is facing using trigonometry
         this.velocityForward = vel; //stores the forward velocity in a variable for later use
-    }
+    };
 
     update() {
 
