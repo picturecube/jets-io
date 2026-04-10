@@ -38,7 +38,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
     update() {
 
-        if (this.status === "fired" && (Math.sqrt((this.sourceX - x) ** 2 + (this.sourceY - y) ** 2) > 500)) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
+        if (this.status === "fired" && (Math.sqrt((this.sourceX - this.x) ** 2 + (this.sourceY - this.y) ** 2) > 500)) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
 
             this.destroy();
 
