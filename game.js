@@ -32,14 +32,7 @@ class GameWindow extends Phaser.Scene
 
         player.initialize(); // calls the player's initialize function
 
-        this.input.on('pointerdown', function(pointer) { // if the pointer is down, fire the bullet
-
-            bullets.at(-1).fire(pointer.worldX, pointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
-            console.log(bullets); // logs the bullets array to the console (debug)
-
-            bullets.push(new Bullet(this, player)); // adds a new bullet to the array
-
-        }, this);
+        
         
         
         
@@ -50,6 +43,15 @@ class GameWindow extends Phaser.Scene
 
         player.update(); // calls the player's update function
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
+
+        if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
+    
+                bullets.at(-1).fire(pointer.x, pointer.y); // fires the last bullet in the array towards the pointer's world coordinates
+                console.log(bullets); // logs the bullets array to the console (debug)
+    
+                bullets.push(new Bullet(this, player)); // adds a new bullet to the array
+    
+        }
         bullets = bullets.filter(bullet => bullet.scene !== undefined); // filters out inactive bullets from the array
 
     };
