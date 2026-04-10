@@ -42,7 +42,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         
         if (this.status === "ready") { // if the status of the bullet is "ready", set the position of the bullet to the player's position and make it invisible
 
-            this.setPosietion(this.source.x, this.source.y); 
+            this.setPosition(this.source.x, this.source.y); 
             this.setVisible(fals);
 
         }
