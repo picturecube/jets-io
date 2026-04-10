@@ -12,21 +12,27 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         this.source = player;
 
-        this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
+        this.status = 'loading'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
+
+        this.loadingTime = 0; // sets the loading time of the bullet
 
     }
 
     fire(x, y) {
 
-        this.setVisible(true);
+        if (this.status = 'ready') {
 
-        this.status = 'fired'; // sets the status of the bullet to "fired" to indicate that it is currently being fired
+            this.setVisible(true);
+    
+            this.status = 'fired'; // sets the status of the bullet to "fired" to indicate that it is currently being fired
+    
+            this.rotation = (1/2) * Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
+            this.setVelocityForward(this.calculatePlayerVelocityRelativeToMouse() - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
+    
+            this.firedX = this.source.x; // stores the player's x position in a variable for later use
+            this.firedY = this.source.y; // stores the player's y position in a variable for later use
 
-        this.rotation = (1/2) * Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
-        this.setVelocityForward(this.calculatePlayerVelocityRelativeToMouse() - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
-
-        this.firedX = this.source.x; // stores the player's x position in a variable for later use
-        this.firedY = this.source.y; // stores the player's y position in a variable for later use
+        };
 
     };
 
@@ -62,6 +68,18 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             this.destroy();
 
         };
+
+        if (this.status === 'loading') { // if the status of the bullet is "loading", increment the loading time and set the status to "ready" after 200 milliseconds
+            
+            this.loadingTime += this.scene.game.loop.delta; // increments the loading time by the time since the last frame
+
+            if (this.loadingTime >= 200) { // if the loading time is greater than or equal to 200 milliseconds, set the status to "ready" and reset the loading time   
+
+                this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
+
+            }
+        
+        }
 
     };
 
