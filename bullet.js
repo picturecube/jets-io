@@ -6,7 +6,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
-        this.setScale(1);
+        this.setScale(0.05); // scales the bullet down to 5% of its original size
 
         this.setVisible(false);
 
