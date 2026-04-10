@@ -19,7 +19,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         this.status = 'fired'; // sets the status of the bullet to "fired" to indicate that it is currently being fired
 
         this.rotation = Math.PI + Phaser.Math.Angle.Between(playerX, playerY, x, y); // makes the bullet face the mouse
-        this.setVelocityForward(500); // sets the velocity to 500 pixels per second in the direction the player is facing
+        this.setVelocityForward(-500); // sets the velocity to 500 pixels per second in the direction the player is facing
 
         this.sourceX = playerX; // stores the player's x position in a variable for later use
         this.sourceY = playerY; // stores the player's y position in a variable for later use
