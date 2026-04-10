@@ -10,21 +10,23 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         this.setVisible(false);
 
+        this.source = player;
+
         this.status = 'ready'; // sets the status of the bullet to "ready" to indicate that it is not currently being fired
 
     }
 
-    fire(x, y, playerX, playerY, player) {
+    fire(x, y) {
 
         this.setVisible(true);
 
         this.status = 'fired'; // sets the status of the bullet to "fired" to indicate that it is currently being fired
 
-        this.rotation = Math.PI + Phaser.Math.Angle.Between(playerX, playerY, x, y); // makes the bullet face the mouse
-        this.setVelocityForward(player.velocityForward - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
+        this.rotation = Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
+        this.setVelocityForward(this.source.velocityForward - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
 
-        this.sourceX = playerX; // stores the player's x position in a variable for later use
-        this.sourceY = playerY; // stores the player's y position in a variable for later use
+        this.firedX = this.source.x; // stores the player's x position in a variable for later use
+        this.firedY = this.source.y; // stores the player's y position in a variable for later use
 
     };
 
@@ -37,8 +39,15 @@ class Bullet extends Phaser.Physics.Arcade.Image {
     };
 
     update() {
+        
+        if (this.status === "ready") { // if the status of the bullet is "ready", set the position of the bullet to the player's position and make it invisible
 
-        if (this.status === "fired" && (Math.sqrt((this.sourceX - this.x) ** 2 + (this.sourceY - this.y) ** 2) > 500)) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
+            this.setPosition(this.source.x, this.source.y); 
+            this.setVisible(false);
+
+        }
+
+        if (this.status === "fired" && (Math.sqrt((this.firedX - this.x) ** 2 + (this.firedY - this.y) ** 2) > 500)) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
 
             this.destroy();
 

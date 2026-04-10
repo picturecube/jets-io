@@ -33,7 +33,7 @@ class GameWindow extends Phaser.Scene
 
         this.input.on('pointerdown', function(pointer) { // if the pointer is down, fire the bullet
 
-            bullets.at(-1).fire(pointer.worldX, pointer.worldY, player.x, player.y, player); // fires the last bullet in the array towards the pointer's world coordinates
+            bullets.at(-1).fire(pointer.worldX, pointer.worldY, player); // fires the last bullet in the array towards the pointer's world coordinates
             console.log(bullets); // logs the bullets array to the console (debug)
 
             bullets.push(new Bullet(this, player)); // adds a new bullet to the array
