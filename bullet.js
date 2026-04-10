@@ -45,7 +45,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         const angleToMouse = Phaser.Math.Angle.Between(this.source.x, this.source.y, this.scene.input.activePointer.worldX, this.scene.input.activePointer.worldY); // calculates the angle between the player and the mouse
 
-        return playerVelocityX * Math.cos(angleToMouse) + playerVelocityY * Math.sin(angleToMouse); // calculates the player's velocity relative to the mouse using trigonometry
+        return 0 - (playerVelocityX * Math.cos(angleToMouse) + playerVelocityY * Math.sin(angleToMouse)); // calculates the player's velocity relative to the mouse using trigonometry
 
     }
 
