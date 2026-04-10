@@ -34,6 +34,10 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             this.firedX = this.source.x; // stores the player's x position in a variable for later use
             this.firedY = this.source.y; // stores the player's y position in a variable for later use
 
+        } else {
+
+            throw new Error("Bullet is not ready to be fired yet!"); // throws an error if the bullet is not ready to be fired
+
         };
 
     };
