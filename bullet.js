@@ -29,8 +29,9 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             this.status = 'fired'; // sets the status of the bullet to "fired" to indicate that it is currently being fired
     
             this.rotation = Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
-            this.setVelocityForward(this.calculatePlayerVelocityRelativeToMouse() - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
-    
+            this.setVelocityForward(/**this.calculatePlayerVelocityRelativeToMouse() - **/500); // sets the velocity to 500 pixels per second in the direction the player is facing
+//                                      ^ to be implemented ^
+
             this.firedX = this.source.x; // stores the player's x position in a variable for later use
             this.firedY = this.source.y; // stores the player's y position in a variable for later use
 
@@ -42,13 +43,13 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
     };
 
-    setVelocityForward(vel) {
+    /**setVelocityForward(vel) {
 
         this.setVelocity(vel * Math.cos(this.rotation), vel * Math.sin(this.rotation)); // sets the velocity to the forward velocity in the direction the player is facing using trigonometry
 
         this.velocityForward = vel; // stores the forward velocity in a variable for later use
 
-    };
+    };**/ //to be refined when I am smarter
 
     calculatePlayerVelocityRelativeToMouse() {
 
