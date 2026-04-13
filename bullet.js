@@ -59,8 +59,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         
         if (this.status === "ready") { // if the status of the bullet is "ready", set the position of the bullet to the player's position and make it invisible
 
-            this.setPosition(this.source.x, this.source.y);
-
+            this.setPosition(this.source.x + this.source.velocityForward * Math.cos(this.rotation), this.source.y + this.source.velocityForward * Math.sin(this.rotation)); // sets the position of the bullet to in front of the player's position so it doesn't lag behind the player when firing
         }
 
         if (this.status === "fired" && (Math.sqrt((this.firedX - this.x) ** 2 + (this.firedY - this.y) ** 2) > 500)) { // if the distance between the player and the mouse is greater than 500 pixels, destroy the bullet to prevent it from flying indefinitely
