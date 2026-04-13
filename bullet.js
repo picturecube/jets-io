@@ -31,7 +31,10 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             console.log(x, y);
     
             this.rotation = Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
-            this.setVelocityForward(this.calculatePlayerVelocityRelativeToMouse() - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
+            this.setVelocityForward(0 - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
+
+            this.body.velocity.x += this.source.body.velocity.x; // adds the player's velocity to the bullet's velocity to make it more realistic
+            this.body.velocity.y += this.source.body.velocity.y;
 
             this.firedX = this.source.x; // stores the player's x position in a variable for later use
             this.firedY = this.source.y; // stores the player's y position in a variable for later use
@@ -51,17 +54,6 @@ class Bullet extends Phaser.Physics.Arcade.Image {
         this.velocityForward = vel; // stores the forward velocity in a variable for later use
 
     };
-
-    calculatePlayerVelocityRelativeToMouse() {
-
-        const playerVelocityX = this.source.body.velocity.x; // gets the player's x velocity
-        const playerVelocityY = this.source.body.velocity.y; // gets the player's y velocity
-
-        const angleToMouse = Phaser.Math.Angle.Between(this.source.x, this.source.y, this.scene.input.activePointer.worldX, this.scene.input.activePointer.worldY); // calculates the angle between the player and the mouse
-
-        return 0 - (playerVelocityX * Math.cos(angleToMouse) + playerVelocityY * Math.sin(angleToMouse)); // calculates the player's velocity relative to the mouse using trigonometry
-
-    }; 
 
     update() {
         
