@@ -30,7 +30,7 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
             console.log(x, y);
     
-            this.rotation = Math.PI + Phaser.Math.Angle.Between(this.source.x, this.source.y, x, y); // makes the bullet face the mouse
+            this.rotation = Math.PI + Phaser.Math.Angle.Between(this.x, this.y, x, y); // makes the bullet face the mouse
             this.setVelocityForward(0 - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
 
             this.body.velocity.x += this.source.body.velocity.x; // adds the player's velocity to the bullet's velocity to make it more realistic
