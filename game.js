@@ -41,7 +41,7 @@ class GameWindow extends Phaser.Scene
 
     update () {
 
-        player.update(); // calls the player's update function
+        
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
         if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
@@ -57,6 +57,8 @@ class GameWindow extends Phaser.Scene
     
         }
         bullets = bullets.filter(bullet => bullet.scene !== undefined); // filters out inactive bullets from the array
+        
+        player.update(); // calls the player's update function
 
     };
 
