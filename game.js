@@ -45,6 +45,8 @@ class GameWindow extends Phaser.Scene
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
         if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
+
+            PointerEvent.updateWorldPoint(this.cameras.main); // updates the world point of the pointer event to match the camera's position
     
                 try {
                     bullets.at(-1).fire(this.input.activePointer.worldX, this.input.activePointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
