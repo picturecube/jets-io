@@ -46,7 +46,7 @@ class GameWindow extends Phaser.Scene
 
         if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
 
-            PointerEvent.updateWorldPoint(this.cameras.main); // updates the world point of the pointer event to match the camera's position
+            this.input.activePointer.updateWorldPoint(this.cameras.main); // updates the world point of the pointer event to match the camera's position
     
                 try {
                     bullets.at(-1).fire(this.input.activePointer.worldX, this.input.activePointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
