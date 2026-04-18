@@ -33,8 +33,16 @@ class Bullet extends Phaser.Physics.Arcade.Image {
             this.rotation = Math.PI + Phaser.Math.Angle.Between(this.x, this.y, x, y); // makes the bullet face the mouse
             this.setVelocityForward(0 - 500); // sets the velocity to 500 pixels per second in the direction the player is facing
 
+            try {
+            
             this.body.velocity.x += this.source.body.velocity.x; // adds the player's velocity to the bullet's velocity to make it more realistic
             this.body.velocity.y += this.source.body.velocity.y;
+
+            } catch {
+
+                throw new Error('The source of the bullet is not a dynamic GameObject!') // Does not change velocity if it is not a dynamic GameObject, such as a player
+
+            }
 
             this.firedX = this.source.x; // stores the player's x position in a variable for later use
             this.firedY = this.source.y; // stores the player's y position in a variable for later use

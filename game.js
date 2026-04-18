@@ -3,20 +3,23 @@ var player;
 var bullet;
 var bullets;
 
+import { launcherSpawner } from './launcherSpawner.js';
+
 class GameWindow extends Phaser.Scene
 {
 
     
 
-    preload () {
+    preload() {
 
         this.load.image('ground', 'assets/ground.png'); // preload assets
         this.load.image('player', 'assets/player.png');
         this.load.image('bullet', 'assets/bullet.png');
+        this.load.image('bullet', 'assets/bullet.png');
 
     };
 
-    create () {
+    create() {
 
         ground = this.add.image(400, 300, 'ground'); // adds a ground first
 
@@ -24,7 +27,6 @@ class GameWindow extends Phaser.Scene
         player = new Player(this, 400, 300, 'player'); // adds player
 
         bullets = [new Bullet(this, player)]; // adds a bullet
-        console.log(bullets[0].scene); // logs the scene of the first bullet to the console (debug)
 
         this.physics.world.setBounds(-2100, -2200, 5000, 5000, true, true, true, true); // sets world bounds
 
@@ -39,8 +41,9 @@ class GameWindow extends Phaser.Scene
 
     };
 
-    update () {
+    update() {
 
+        launcherSpawner.spawn(this);
         
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
@@ -50,7 +53,6 @@ class GameWindow extends Phaser.Scene
     
                 try {
                     bullets.at(-1).fire(this.input.activePointer.worldX, this.input.activePointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
-                    console.log(bullets); // logs the bullets array to the console (debug)
         
                     bullets.push(new Bullet(this, player)); // adds a new bullet to the array
                 } catch {}
