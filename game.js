@@ -24,7 +24,6 @@ class GameWindow extends Phaser.Scene
     create() {
 
         ground = this.add.image(400, 300, 'ground'); // adds a ground first
-
         
         player = new Player(this, 400, 300, 'player'); // adds player
 
@@ -35,7 +34,6 @@ class GameWindow extends Phaser.Scene
         this.cameras.main.setBackgroundColor('#2e2e2e'); // sets background color to a dark gray
 
         player.initialize(); // calls the player's initialize function
-
         
         import('./launcherSpawner.js').then(module => {
 
@@ -46,6 +44,8 @@ class GameWindow extends Phaser.Scene
     };
 
     update() {
+
+        console.log('launcherSpawner:', this.launcherSpawner);
 
         this.launcherSpawner.spawn(this);
         
