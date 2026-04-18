@@ -2,7 +2,7 @@ class Launcher extends Phaser.GameObjects.Image {
 
     constructor(id, x, y, scene) {
         
-        super(x, y, 'launcher');
+        super(scene, x, y, 'launcher');
 
         this.scene = scene;
 
