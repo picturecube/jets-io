@@ -3,7 +3,11 @@ var player;
 var bullet;
 var bullets;
 
-import { launcherSpawner } from './launcherSpawner.js';
+import('./launcherSpawner.js').then(module => {
+
+    launcherSpawner = module.launcherSpawner;
+
+});
 
 class GameWindow extends Phaser.Scene
 {
