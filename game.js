@@ -67,6 +67,8 @@ class GameWindow extends Phaser.Scene
         
         player.update(); // calls the player's update function
 
+        launcherSpawner.launchers.forEach(launcher => launcher.update()); // calls the update function for each launcher in the spawner's array
+
     };
 
 };
