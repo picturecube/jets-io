@@ -1,4 +1,4 @@
-import { Launcher } from "./launcher.js";
+import Launcher from "./launcher.js";
 
 class LauncherSpawner {
 
@@ -20,4 +20,4 @@ class LauncherSpawner {
 
 };
 
-export const launcherSpawner =  new LauncherSpawner();
+export const launcherSpawner = new LauncherSpawner();
