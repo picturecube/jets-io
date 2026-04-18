@@ -3,11 +3,7 @@ var player;
 var bullet;
 var bullets;
 
-import('./launcherSpawner.js').then(module => {
 
-    this.launcherSpawner = module.launcherSpawner;
-
-});
 
 class GameWindow extends Phaser.Scene
 {
@@ -20,6 +16,8 @@ class GameWindow extends Phaser.Scene
         this.load.image('player', 'assets/player.png');
         this.load.image('bullet', 'assets/bullet.png');
         this.load.image('launcher', 'assets/launcher.png');
+
+        
 
     };
 
@@ -39,9 +37,11 @@ class GameWindow extends Phaser.Scene
         player.initialize(); // calls the player's initialize function
 
         
-        
-        
-        
+        import('./launcherSpawner.js').then(module => {
+
+            this.launcherSpawner = module.launcherSpawner;
+
+        });
 
     };
 
