@@ -12,7 +12,7 @@ class LauncherSpawner {
 
         if (this.launchers.length <= 80) {
 
-            this.launchers.push(new Launcher(this.launchers.length - 1, (Math.random() * 1000 - 500), (Math.random() * 1000 - 500), scene))
+            this.launchers.push(new Launcher(this.launchers.length - 1, (Math.random() * 10000 - 5000), (Math.random() * 10000 - 5000), scene))
 
         };
 
