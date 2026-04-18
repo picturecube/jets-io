@@ -33,9 +33,11 @@ class Launcher extends Phaser.GameObjects.Image {
             
             };
             
+            missile.fire(player.x, player.y); // fires the missile towards the player
+
         } catch {};
 
-        missile.fire(player.x, player.y); // fires the missile towards the player
+        
 
     };
 
