@@ -1,3 +1,5 @@
+import { Launcher } from "./launcher.js";
+
 class LauncherSpawner {
 
     constructor() {

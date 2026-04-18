@@ -34,3 +34,5 @@ class Launcher extends Phaser.GameObjects.Image {
     };
 
 };
+
+export default Launcher;
