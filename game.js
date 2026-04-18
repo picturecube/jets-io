@@ -2,6 +2,7 @@ var ground;
 var player;
 var bullet;
 var bullets;
+var launcherSpawner;
 
 
 
@@ -37,7 +38,7 @@ class GameWindow extends Phaser.Scene
         
         import('./launcherSpawner.js').then(module => {
 
-            this.launcherSpawner = module.launcherSpawner;
+            launcherSpawner = module.launcherSpawner;
 
         });
 
@@ -47,7 +48,7 @@ class GameWindow extends Phaser.Scene
 
         console.log('launcherSpawner:', this.launcherSpawner);
 
-        this.launcherSpawner.spawn(this);
+        launcherSpawner.spawn(this);
         
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
