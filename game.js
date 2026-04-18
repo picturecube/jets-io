@@ -52,9 +52,10 @@ class GameWindow extends Phaser.Scene
             
             launcherSpawner.spawn(this); // spawns launchers if the spawner has been imported
             
-            launcherSpawner.launchers.forEach(launcher => launcher.update()); // calls the update function for each launcher in the spawner's array
+            launcherSpawner.launchers.forEach(launcher => launcher.update(player)); // calls the update function for each launcher in the spawner's array
 
         };
+
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
         if (this.input.activePointer.isDown) { // if the pointer is down, fire the bullet
@@ -66,10 +67,11 @@ class GameWindow extends Phaser.Scene
                     bullets.at(-1).fire(this.input.activePointer.worldX, this.input.activePointer.worldY); // fires the last bullet in the array towards the pointer's world coordinates
         
                     bullets.push(new Bullet(this, player)); // adds a new bullet to the array
-                    
+
                 } catch {};
     
-        }
+        };
+
         bullets = bullets.filter(bullet => bullet.scene !== undefined); // filters out inactive bullets from the array
         
         player.update(); // calls the player's update function
