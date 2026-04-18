@@ -25,11 +25,15 @@ class Launcher extends Phaser.GameObjects.Image {
 
     fire(x, y, player) {
 
-        if (this.missile.scene === undefined || this.missile === undefined) { // checks if there is already a missile in the scene
+        try {
 
-            this.missile = new Bullet(this.scene, this); // creates a new missile if there isn't one already
-        
-        };
+            if (this.missile.scene === undefined || this.missile === undefined) { // checks if there is already a missile in the scene
+    
+                this.missile = new Bullet(this.scene, this); // creates a new missile if there isn't one already
+            
+            };
+            
+        } catch {};
 
         missile.fire(player.x, player.y); // fires the missile towards the player
 
