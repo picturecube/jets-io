@@ -18,4 +18,4 @@ class LauncherSpawner {
 
 };
 
-export default new LauncherSpawner();
+export const launcherSpawner =  new LauncherSpawner();

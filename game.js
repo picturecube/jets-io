@@ -5,7 +5,7 @@ var bullets;
 
 import('./launcherSpawner.js').then(module => {
 
-    launcherSpawner = module.launcherSpawner;
+    const launcherSpawner = module.launcherSpawner;
 
 });
 
