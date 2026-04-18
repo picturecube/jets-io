@@ -48,7 +48,7 @@ class GameWindow extends Phaser.Scene
 
         console.log('launcherSpawner:', this.launcherSpawner);
 
-        launcherSpawner.spawn(this);
+        if (launcherSpawner != undefined) {launcherSpawner.spawn(this);}; // spawns the launcher if the module has been imported
         
         bullets.forEach(bullet => bullet.update()); // calls the update function for each bullet in the array
 
