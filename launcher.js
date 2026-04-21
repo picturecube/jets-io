@@ -17,7 +17,7 @@ class Launcher extends Phaser.GameObjects.Image {
 
     update(player) {
 
-        this.setRotation(Math.PI + Phaser.Math.Angle.Between(this.x, this.y, player.x, player.y)); // sets the rotation of the launcher to point towards the player
+        this.setRotation((1/2) * Math.PI + Phaser.Math.Angle.Between(this.x, this.y, player.x, player.y)); // sets the rotation of the launcher to point towards the player
 
         this.fire(player.x, player.y, player); // fires a missile towards the player
 
