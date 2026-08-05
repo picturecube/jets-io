@@ -5,5 +5,5 @@ usernameForm.on('submit', function() {
     console.log("Form submitted");
     const playerName = $('#player-name-input').val();
     document.cookie = "playerName=" + playerName;
-    window.location.href = "game.html";
+    window.location.href = "https://picturecube.github.io/jets-io/game.html";
 });
